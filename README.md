@@ -37,3 +37,4 @@ A new file named `fixtures/walrus-emboss-001.png` will be created:
 * https://collection.sfomuseum.org/objects/1511908311/
 * https://github.com/sfomuseum/swift-image-emboss
 * https://developer.apple.com/documentation/vision
+* https://developer.apple.com/videos/play/wwdc2023/10176/
