@@ -10,16 +10,17 @@ public enum Errors: Error {
     case cgImage
     case processError
     case unsupportedOS
+    case pngWrite
 }
 
 @available(macOS 14.0, *)
 struct ImageEmbossCLI: ParsableCommand {
     
-    @Option(help:"The path to an image file to extract image subjects from")
+    @Option(help:"The path to a source image file to extract image subjects from.")
     var inputFile: String
     
-    @Option(help:"Combined...")
-    var combined: Bool
+    @Option(help:"Return all subjects extracted from the source image as a single image. ")
+    var combined: Bool = true
     
     func run() throws {
         
@@ -31,7 +32,6 @@ struct ImageEmbossCLI: ParsableCommand {
         
         let source_url = URL(fileURLWithPath: inputFile)
         let source_root = source_url.deletingLastPathComponent()
-        let source_ext = source_url.pathExtension
         
         guard let im = NSImage(byReferencingFile:inputFile) else {
             throw(Errors.invalidImage)
@@ -48,24 +48,21 @@ struct ImageEmbossCLI: ParsableCommand {
         case .failure(let error):
             throw(error)
         case .success(let data):
-            
-            print("WHAT \(data.count)")
-            
+                        
             var i = 1
             
             for im in data {
                 
                 let fname = source_url.deletingPathExtension().lastPathComponent
-                let im_fname =  fname + "-" + String(format:"%03d", i) + "." + source_ext
+                let im_fname =  fname + "-emboss-" + String(format:"%03d", i) + ".png"
                 
                 let im_url = URL(fileURLWithPath: source_root.absoluteString)
                 let im_path = im_url.appending(path: im_fname)
                 
-                print("SPORK \(im_path)")
+                if !im.pngWrite(to: im_path) {
+                    throw(Errors.pngWrite)
+                }
 
-                let im_rsp = im.pngWrite(to: im_path)
-                print("WOO \(im_rsp)")
-                
                 i += 1
             }
         }
@@ -84,7 +81,6 @@ extension NSImage {
             try pngData?.write(to: url, options: options)
             return true
         } catch {
-            print(error)
             return false
         }
     }

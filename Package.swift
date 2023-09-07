@@ -7,8 +7,8 @@ let package = Package(
     name: "image-emboss",
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
-        // .package(url: "https://github.com/sfomuseum/swift-image-classify", from: "0.0.1"),
-	.package(path: "/usr/local/sfomuseum/swift-image-emboss"),
+        .package(url: "https://github.com/sfomuseum/swift-image-emboss", from: "0.0.1"),
+        // .package(path: "/usr/local/sfomuseum/swift-image-emboss"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

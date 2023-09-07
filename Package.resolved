@@ -8,6 +8,15 @@
         "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
         "version" : "1.2.3"
       }
+    },
+    {
+      "identity" : "swift-image-emboss",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sfomuseum/swift-image-emboss",
+      "state" : {
+        "revision" : "9a57b5c48378c804f157353d2ab770839c7391ee",
+        "version" : "0.0.1"
+      }
     }
   ],
   "version" : 2
