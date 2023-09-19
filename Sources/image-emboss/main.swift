@@ -51,7 +51,9 @@ struct ImageEmbossCLI: ParsableCommand {
                         
             var i = 1
             
-            for im in data {
+            for cg_im in data {
+ 
+                let ns_im = NSImage(cgImage: cgImage, size: CGSize(width: cg_im.width, height: cg_im.height))
                 
                 let fname = source_url.deletingPathExtension().lastPathComponent
                 let im_fname =  fname + "-emboss-" + String(format:"%03d", i) + ".png"
