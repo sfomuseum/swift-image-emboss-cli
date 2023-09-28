@@ -13,7 +13,7 @@ public enum Errors: Error {
     case pngWrite
 }
 
-@available(macOS 14.0, *)
+@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
 struct ImageEmbossCLI: ParsableCommand {
     
     @Option(help:"The path to a source image file to extract image subjects from.")
