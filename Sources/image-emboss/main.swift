@@ -13,7 +13,7 @@ public enum Errors: Error {
     case pngWrite
 }
 
-@available(macOS 14.0, iOS 17.0, tvOS 17.0, *)
+@available(macOS 14.0, *)
 struct ImageEmbossCLI: ParsableCommand {
     
     @Option(help:"The path to a source image file to extract image subjects from.")
@@ -61,7 +61,7 @@ struct ImageEmbossCLI: ParsableCommand {
                 let im_url = URL(fileURLWithPath: source_root.absoluteString)
                 let im_path = im_url.appending(path: im_fname)
                 
-                if !im.pngWrite(to: im_path) {
+                if !ns_im.pngWrite(to: im_path) {
                     throw(Errors.pngWrite)
                 }
 
