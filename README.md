@@ -34,23 +34,23 @@ OPTIONS:
 
 All of the images in these examples are included in the [fixtures](fixtures) directory.
 
-Given the image [sfomuseum-walrus-1511908311.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the SFO Museum Aviation Collectio:
+Given the image [fixtures/sfomuseum-walrus-1511908311.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the [SFO Museum Aviation Collection](https://collection.sfomuseum.org/objects/1511908311/):
 
-[![](sfomuseum-walrus-1511908311.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
+[![](fixtures/sfomuseum-walrus-1511908311.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
 When we run the `image-emboss` tool like this:
 
 ```
-$> ./.build/debug/image-emboss --input-file sfomuseum-walrus-1511908311.jpg
+$> ./.build/debug/image-emboss --input-file fixtures/sfomuseum-walrus-1511908311.jpg
 ```
 
 A new file named [fixtures/sfomuseum-walrus-1511908311-emboss-001.png](fixtures/sfomuseum-walrus-1511908311-emboss-001.png) will be created:
 
 ![](docs/images/swift-image-emboss-walrus.png)
 
-Or the image [cooperhewitt-spankingcat-18382391.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the Cooper Hewitt Smithsonian Design Museum Collectio:
+Or the image [fixtures/cooperhewitt-spankingcat-18382391.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the [Cooper Hewitt Smithsonian Design Museum Collection](https://collection.sfomuseum.org/objects/1511908311/):
 
-[![](cooperhewitt-spankingcat-18382391.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
+[![](fixtures/cooperhewitt-spankingcat-18382391.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
 When we run the `image-emboss` tool like this:
 
