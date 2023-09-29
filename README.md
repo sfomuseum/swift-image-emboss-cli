@@ -62,6 +62,18 @@ A new file named [fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png](fix
 
 ![](docs/images/swift-image-emboss-spankingcat.png)
 
+If you have an image with multiple "subjects" and you'd like to create a separate image for each pass the `--combined false` flag. For example, using the image [fixtures/cooperhewitt-forks-18381819.jpg](https://collection.cooperhewitt.org/objects/18381819/) taken from the [Cooper Hewitt Smithsonian National Design Museum Collection](https://collection.cooperhewitt.org/objects/18381819/):
+
+When we run the `image-emboss` tool like this:
+
+```
+$> ./.build/debug/image-emboss --input-file cooperhewitt-forks-18381819.jpg --combined false
+```
+
+Six new files named [fixtures/cooperhewitt-spankingcat-18382391-emboss-00[1-6].png](fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png) will be created:
+
+![](docs/images/swift-image-emboss-forks.png)
+
 ## See also
 
 * https://collection.sfomuseum.org/objects/1511908311/
