@@ -1,6 +1,6 @@
-# swift-image-classify-cli
+# swift-image-emboss-cli
 
-Command line tool for extracting subject images from images using Apple's Vision framework.
+Command line tool for extracting "subjects" from images using Apple's Vision framework.
 
 ## Important
 
@@ -9,7 +9,6 @@ This tool requires Mac OS 14.0 or higher.
 ## Documentation
 
 Documentation is incomplete.
-
 
 ## Tools
 
@@ -64,6 +63,8 @@ A new file named [fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png](fix
 
 If you have an image with multiple "subjects" and you'd like to create a separate image for each pass the `--combined false` flag. For example, using the image [fixtures/cooperhewitt-forks-18381819.jpg](https://collection.cooperhewitt.org/objects/18381819/) taken from the [Cooper Hewitt Smithsonian National Design Museum Collection](https://collection.cooperhewitt.org/objects/18381819/):
 
+[![](fixtures/cooperhewitt-forks-18381819.jpg)](https://collection.sfomuseum.org/objects/18381819/)
+
 When we run the `image-emboss` tool like this:
 
 ```
@@ -76,9 +77,9 @@ Six new files named [fixtures/cooperhewitt-spankingcat-18382391-emboss-00[1-6].p
 
 ## See also
 
-* https://collection.sfomuseum.org/objects/1511908311/
-* https://collection.cooperhewitt.org/objects/18381819/
-* https://collection.cooperhewitt.org/objects/18382391/
 * https://github.com/sfomuseum/swift-image-emboss
 * https://developer.apple.com/documentation/vision
 * https://developer.apple.com/videos/play/wwdc2023/10176/
+* https://collection.sfomuseum.org/objects/1511908311/
+* https://collection.cooperhewitt.org/objects/18381819/
+* https://collection.cooperhewitt.org/objects/18382391/
