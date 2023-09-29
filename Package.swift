@@ -7,7 +7,7 @@ let package = Package(
     name: "image-emboss",
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
-        .package(url: "https://github.com/sfomuseum/swift-image-emboss", from: "0.0.1"),
+        .package(url: "https://github.com/sfomuseum/swift-image-emboss", from: "0.0.4"),
         // .package(path: "/usr/local/sfomuseum/swift-image-emboss"),
     ],
     targets: [

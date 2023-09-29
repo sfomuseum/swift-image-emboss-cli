@@ -8,6 +8,7 @@ public enum Errors: Error {
     case invalidPath
     case invalidImage
     case cgImage
+    case ciImage
     case processError
     case unsupportedOS
     case pngWrite
@@ -37,23 +38,23 @@ struct ImageEmbossCLI: ParsableCommand {
             throw(Errors.invalidImage)
         }
         
-        guard let cgImage = im.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
-            throw(Errors.cgImage)
+        guard let ciImage = im.ciImage() else {
+            throw(Errors.ciImage)
         }
-                
-        let ic = ImageEmboss()
-        let rsp = ic.ProcessImage(image: cgImage, combined: combined)
+        
+        let embosser = ImageEmboss()
+        let rsp = embosser.ProcessImage(image: ciImage, combined: combined)
         
         switch rsp {
         case .failure(let error):
             throw(error)
         case .success(let data):
-                        
+            
             var i = 1
             
-            for cg_im in data {
- 
-                let ns_im = NSImage(cgImage: cgImage, size: CGSize(width: cg_im.width, height: cg_im.height))
+            for ci_im in data {
+                
+                let ns_im = NSImage.fromCIImage(ci_im) // (cgImage: cgImage, size: CGSize(width: cg_im.width, height: cg_im.height))
                 
                 let fname = source_url.deletingPathExtension().lastPathComponent
                 let im_fname =  fname + "-emboss-" + String(format:"%03d", i) + ".png"
@@ -64,7 +65,7 @@ struct ImageEmbossCLI: ParsableCommand {
                 if !ns_im.pngWrite(to: im_path) {
                     throw(Errors.pngWrite)
                 }
-
+                
                 i += 1
             }
         }
@@ -85,6 +86,21 @@ extension NSImage {
         } catch {
             return false
         }
+    }
+    func ciImage() -> CIImage? {
+        guard let data = self.tiffRepresentation,
+              let bitmap = NSBitmapImageRep(data: data) else {
+            return nil
+        }
+        bitmap.hasAlpha = true
+        let ci = CIImage(bitmapImageRep: bitmap)
+        return ci
+    }
+    static func fromCIImage(_ ciImage: CIImage) -> NSImage {
+        let rep = NSCIImageRep(ciImage: ciImage)
+        let nsImage = NSImage(size: rep.size)
+        nsImage.addRepresentation(rep)
+        return nsImage
     }
 }
 

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sfomuseum/swift-image-emboss",
       "state" : {
-        "revision" : "ddda9a21b29fc8ecd551b04f05f2b10dacb24fb7",
-        "version" : "0.0.3"
+        "revision" : "4433b9863872b85dc2fa3b5e0ebf74189da9ea12",
+        "version" : "0.0.4"
       }
     }
   ],
