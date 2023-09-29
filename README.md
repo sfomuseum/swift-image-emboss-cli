@@ -77,7 +77,7 @@ When we run the `image-emboss` tool like this:
 $> ./.build/debug/image-emboss --input-file cooperhewitt-forks-18381819.jpg --combined false
 ```
 
-Six new files named [fixtures/cooperhewitt-spankingcat-18382391-emboss-00[1-6].png](fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png) will be created:
+Six new files named [fixtures/cooperhewitt-spankingcat-18382391-emboss-00[1-6].png](fixtures/) will be created:
 
 ![](docs/images/swift-image-emboss-forks.png)
 
