@@ -31,9 +31,11 @@ OPTIONS:
 
 #### Examples
 
+##### Walrus
+
 All of the images in these examples are included in the [fixtures](fixtures) directory.
 
-Given the image [fixtures/sfomuseum-walrus-1511908311.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the [SFO Museum Aviation Collection](https://collection.sfomuseum.org/objects/1511908311/):
+Given the image [fixtures/sfomuseum-walrus-1511908311.jpg](https://collection.sfomuseum.org/objects/1511908311/) taken from the [SFO Museum Aviation Collection](https://collection.sfomuseum.org/objects/1511908311/):
 
 [![](fixtures/sfomuseum-walrus-1511908311.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
@@ -47,7 +49,9 @@ A new file named [fixtures/sfomuseum-walrus-1511908311-emboss-001.png](fixtures/
 
 ![](docs/images/swift-image-emboss-walrus.png)
 
-Or the image [fixtures/cooperhewitt-spankingcat-18382391.jpg](https://collection.sfomuseum.org/objects/1511908311/), taken from the [Cooper Hewitt Smithsonian Design Museum Collection](https://collection.sfomuseum.org/objects/1511908311/):
+##### Spanking Cat
+
+Or the image [fixtures/cooperhewitt-spankingcat-18382391.jpg](https://collection.sfomuseum.org/objects/1511908311/) taken from the [Cooper Hewitt Smithsonian Design Museum Collection](https://collection.sfomuseum.org/objects/1511908311/):
 
 [![](fixtures/cooperhewitt-spankingcat-18382391.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
@@ -60,6 +64,8 @@ $> ./.build/debug/image-emboss --input-file cooperhewitt-spankingcat-18382391.jp
 A new file named [fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png](fixtures/cooperhewitt-spankingcat-18382391-emboss-001.png) will be created:
 
 ![](docs/images/swift-image-emboss-spankingcat.png)
+
+##### Forks
 
 If you have an image with multiple "subjects" and you'd like to create a separate image for each pass the `--combined false` flag. For example, using the image [fixtures/cooperhewitt-forks-18381819.jpg](https://collection.cooperhewitt.org/objects/18381819/) taken from the [Cooper Hewitt Smithsonian National Design Museum Collection](https://collection.cooperhewitt.org/objects/18381819/):
 
