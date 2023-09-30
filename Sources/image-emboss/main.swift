@@ -8,7 +8,6 @@ public enum Errors: Error {
     case notFound
     case invalidPath
     case invalidImage
-    case cgImage
     case ciImage
     case processError
     case unsupportedOS
