@@ -2,13 +2,9 @@
 
 Command line tool for extracting "subjects" from images using Apple's Vision framework.
 
-## Important
-
-This tool requires Mac OS 14.0 or higher.
-
 ## Documentation
 
-Documentation is incomplete.
+Documentation is incomplete at this time.
 
 ## Tools
 
@@ -39,7 +35,7 @@ Given the image [fixtures/sfomuseum-walrus-1511908311.jpg](https://collection.sf
 
 [![](fixtures/sfomuseum-walrus-1511908311.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
-When we run the `image-emboss` tool like this:
+When the `image-emboss` tool is run like this:
 
 ```
 $> ./.build/debug/image-emboss --input-file fixtures/sfomuseum-walrus-1511908311.jpg
@@ -55,7 +51,7 @@ Or the image [fixtures/cooperhewitt-spankingcat-18382391.jpg](https://collection
 
 [![](fixtures/cooperhewitt-spankingcat-18382391.jpg)](https://collection.sfomuseum.org/objects/1511908311/)
 
-When we run the `image-emboss` tool like this:
+When the `image-emboss` tool is run like this:
 
 ```
 $> ./.build/debug/image-emboss --input-file cooperhewitt-spankingcat-18382391.jpg
@@ -71,7 +67,7 @@ If you have an image with multiple "subjects" and you'd like to create a separat
 
 [![](fixtures/cooperhewitt-forks-18381819.jpg)](https://collection.sfomuseum.org/objects/18381819/)
 
-When we run the `image-emboss` tool like this:
+When the `image-emboss` tool is run like this:
 
 ```
 $> ./.build/debug/image-emboss --input-file cooperhewitt-forks-18381819.jpg --combined false
@@ -80,6 +76,10 @@ $> ./.build/debug/image-emboss --input-file cooperhewitt-forks-18381819.jpg --co
 Six new files named [fixtures/cooperhewitt-spankingcat-18382391-emboss-00[1-6].png](fixtures/) will be created:
 
 ![](docs/images/swift-image-emboss-forks.png)
+
+## Requirements
+
+This requires MacOS 14.0, iOS 17.0, tvOS 17.0 or higher.
 
 ## See also
 
