@@ -2,6 +2,7 @@ import Foundation
 import ArgumentParser
 import AppKit
 import ImageEmboss
+import CoreImageImage
 
 public enum Errors: Error {
     case notFound
@@ -33,13 +34,16 @@ struct ImageEmbossCLI: ParsableCommand {
         
         let source_url = URL(fileURLWithPath: inputFile)
         let source_root = source_url.deletingLastPathComponent()
+
+        var ciImage: CIImage
         
-        guard let im = NSImage(byReferencingFile:inputFile) else {
-            throw(Errors.invalidImage)
-        }
+        let im_rsp = CoreImageImage.LoadFromURL(url: source_url)
         
-        guard let ciImage = im.ciImage() else {
-            throw(Errors.ciImage)
+        switch im_rsp {
+        case .failure(let error):
+            throw(error)
+        case .success(let im):
+            ciImage = im
         }
         
         let embosser = ImageEmboss()
