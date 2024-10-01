@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser",
       "state" : {
-        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
-        "version" : "1.2.3"
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sfomuseum/swift-coreimage-image.git",
       "state" : {
-        "revision" : "4dfc8c1a99cfcc4a9b62f5df7ea2f2b62b92decd",
-        "version" : "1.0.0"
+        "revision" : "f4788377a03a9bf5bb5cb7bace732b70192941ab",
+        "version" : "1.1.0"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sfomuseum/swift-image-emboss",
       "state" : {
-        "revision" : "4433b9863872b85dc2fa3b5e0ebf74189da9ea12",
-        "version" : "0.0.4"
+        "revision" : "8e92c1832e1d80a2116546b3c3edc2bb767ae5a8",
+        "version" : "0.0.5"
       }
     }
   ],

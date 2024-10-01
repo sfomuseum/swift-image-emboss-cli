@@ -90,6 +90,7 @@ extension NSImage {
             return false
         }
     }
+    /*
     func ciImage() -> CIImage? {
         guard let data = self.tiffRepresentation,
               let bitmap = NSBitmapImageRep(data: data) else {
@@ -99,6 +100,7 @@ extension NSImage {
         let ci = CIImage(bitmapImageRep: bitmap)
         return ci
     }
+     */
     static func fromCIImage(_ ciImage: CIImage) -> NSImage {
         let rep = NSCIImageRep(ciImage: ciImage)
         let nsImage = NSImage(size: rep.size)
